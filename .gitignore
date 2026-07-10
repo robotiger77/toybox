@@ -1,0 +1,17 @@
+# Defold generated files
+**/.internal/
+**/.editor_settings/
+**/build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.project
+.cproject
+.externalToolBuilders
+
+# Misc
+.lock-wscript
+*.pyc
