@@ -11,6 +11,8 @@ Thumbs.db
 .project
 .cproject
 .externalToolBuilders
+**/.vscode/
+**/debugger/
 
 # Misc
 .lock-wscript
