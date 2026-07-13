@@ -45,3 +45,11 @@ embedded_instances {
     y: 360.0
   }
 }
+embedded_instances {
+  id: "world"
+  data: "components {\n"
+  "  id: \"level\"\n"
+  "  component: \"/main/level.tilemap\"\n"
+  "}\n"
+  ""
+}
