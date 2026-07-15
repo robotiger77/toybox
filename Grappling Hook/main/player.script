@@ -1,8 +1,24 @@
+local FALL_MAX = 120*4
+local GRAVITY = 360*4
+
 function init(self)
+	self.velocity = vmath.vector3()
 	self.correction = vmath.vector3()
 end
 
+local function move(self, dt)
+	local pos = go.get_position() + self.velocity * dt
+	go.set_position(pos)
+end
+
+local function gravity(self, dt)
+	self.velocity.y = self.velocity.y - GRAVITY * dt
+	if self.velocity.y < -FALL_MAX then self.velocity.y = -FALL_MAX end
+end
+
 function update(self, dt)
+	move(self, dt)
+	gravity(self, dt)
 	self.correction = vmath.vector3()
 
 end
