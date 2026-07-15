@@ -22,15 +22,21 @@ function fixed_update(self, dt)
 	-- Remove this function if not needed
 end
 
+local function resolve_contact_point(self, data)
+	if data.distance > 0 then
+		local proj = vmath.project(self.correction, data.normal * data.distance)
+		if proj < 1 then
+			local comp = (data.distance - data.distance * proj) * data.normal
+			go.set_position(go.get_position() + comp)
+			self.correction = self.correction + comp
+		end
+	end
+end
+
 function on_message(self, message_id, message, sender)
 	if message_id == hash("contact_point_response") then
-		if message.distance > 0 then
-			local proj = vmath.project(self.correction, message.normal * message.distance)
-			if proj < 1 then
-				local comp = (message.distance - message.distance * proj) * message.normal
-				go.set_position(go.get_position() + comp)
-				self.correction = self.correction + comp
-			end
+		if message.other_group == hash("world") then
+			resolve_contact_point(self, message)
 		end
 	end
 end
