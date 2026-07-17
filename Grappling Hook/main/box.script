@@ -1,0 +1,20 @@
+IMAGES = {
+	"block_empty",
+	"block_empty_warning",
+	"block_plank",
+	"block_planks"
+}
+
+local function init_random()
+	math.randomseed(os.time())
+	for i = 1, 5 do
+		math.random()
+	end
+end	
+
+init_random()
+
+function init(self)
+	local random_image = IMAGES[math.random(1, #IMAGES)]
+	sprite.play_flipbook("#sprite", random_image)
+end
