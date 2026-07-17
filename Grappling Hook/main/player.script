@@ -49,12 +49,16 @@ local function resolve_contact_point(self, data)
 		local proj = vmath.project(self.correction, data.normal * data.distance)
 		if proj < 1 then
 			local comp = (data.distance - data.distance * proj) * data.normal
-			go.set_position(go.get_position() + comp)
-			self.correction = self.correction + comp
-			-- bump back if player hits the ceiling
-			if data.normal.y < -0.5 and self.velocity.y > 0 then
+			-- If this contact is mostly a ground contact, ignore horizontal correction
+			-- so tile-edge collisions won't push the player sideways and slow them down
+			if data.normal.y > 0.5 then
+				comp.x = 0
+			-- Bump back if player hits the ceiling
+			elseif data.normal.y < -0.5 and self.velocity.y > 0 then
 				self.velocity.y = -BOUNCE
 			end
+			go.set_position(go.get_position() + comp)
+			self.correction = self.correction + comp
 		end
 	end
 end
