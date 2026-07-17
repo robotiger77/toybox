@@ -52,7 +52,9 @@ local function resolve_contact_point(self, data)
 			go.set_position(go.get_position() + comp)
 			self.correction = self.correction + comp
 			-- bump back if player hits the ceiling
-			if data.normal.y < -0.5 and self.velocity.y > 0 then self.velocity.y = -BOUNCE end
+			if data.normal.y < -0.5 and self.velocity.y > 0 then
+				self.velocity.y = -BOUNCE
+			end
 		end
 	end
 end
