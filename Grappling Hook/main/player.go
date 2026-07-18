@@ -12,6 +12,9 @@ embedded_components {
   "  texture: \"/main/main.atlas\"\n"
   "}\n"
   ""
+  position {
+    y: 31.0
+  }
 }
 embedded_components {
   id: "collisionobject"
@@ -27,7 +30,7 @@ embedded_components {
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"
   "    position {\n"
-  "      y: -30.0\n"
+  "      y: 1.0\n"
   "    }\n"
   "    rotation {\n"
   "    }\n"
@@ -37,7 +40,7 @@ embedded_components {
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"
   "    position {\n"
-  "      y: -5.0\n"
+  "      y: 26.0\n"
   "    }\n"
   "    rotation {\n"
   "    }\n"
