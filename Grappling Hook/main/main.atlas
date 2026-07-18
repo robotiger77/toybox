@@ -19,6 +19,12 @@ images {
 images {
   image: "/assets/images/block_empty.png"
 }
+images {
+  image: "/assets/images/hook.png"
+}
+images {
+  image: "/assets/images/line.png"
+}
 animations {
   id: "player_idle"
   images {
