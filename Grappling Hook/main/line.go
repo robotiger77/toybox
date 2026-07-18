@@ -11,7 +11,7 @@ embedded_components {
   "}\n"
   "size {\n"
   "  x: 14.0\n"
-  "  y: 18.0\n"
+  "  y: 12.0\n"
   "}\n"
   "size_mode: SIZE_MODE_MANUAL\n"
   "textures {\n"
