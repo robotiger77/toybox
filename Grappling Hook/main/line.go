@@ -19,4 +19,7 @@ embedded_components {
   "  texture: \"/main/main.atlas\"\n"
   "}\n"
   ""
+  position {
+    z: 0.1
+  }
 }
